@@ -1,0 +1,23 @@
+<h1>All quips</h1>
+
+<table>
+	<tr>
+		<th>Text</th>
+		<th>Author</th>
+		<th>Branch</th>
+		<th>Offensive</th>
+		<th></th>
+	</tr>
+
+	<% @quips.each do |quip| %>
+		<tr>
+			<td><%= quip.text %></td>
+			<td><%= quip.author %></td>
+			<td><%= quip.branch %></td>
+			<td><%= quip.offensive %></td>
+		</tr>
+	<% end %>
+</table>
+
+<br><br>
+<%= link_to 'New', new_quip_path %> 

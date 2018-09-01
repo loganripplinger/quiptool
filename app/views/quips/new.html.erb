@@ -1,0 +1,27 @@
+<%= form_with scope: :quip, url: quips_path, local: true do |form| %>
+	<p>
+		<%= form.label :text %><br>
+		<%= form.text_area :text %>
+	</p>
+
+	<p>
+		<%= form.label :author %><br>
+		<%= form.text_field :author %>
+	</p>
+
+	<p>
+		<%= form.label :branch %><br>
+		<%= form.text_field :branch %>
+	</p>
+
+	<p>
+		<%= form.label :offensive %><br>
+		<%= form.check_box :offensive %>
+	</p>
+
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+
+<%= link_to 'Home', quips_path %>
