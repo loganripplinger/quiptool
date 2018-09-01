@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # quipwritingtool
 CRUD website for a team of joke writers
-=======
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,4 +25,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> Initial commit. Simple working CRUD.
