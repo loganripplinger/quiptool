@@ -1,12 +1,3 @@
-<style>
-  .field_with_errors label {
-    color: red;
-  }
-  .field_with_errors input {
-    color: red;
-  }
-</style>
-
 <%= form_with model: @quip, local: true do |form| %>
   
   <% if @quip.errors.any? %>
