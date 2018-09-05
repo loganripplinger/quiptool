@@ -17,6 +17,9 @@
 			<td><%= quip.offensive %></td>
 			<td><%= link_to 'Show', quip_path(quip) %></td>
 			<td><%= link_to 'Edit', edit_quip_path(quip) %></td>
+			<td><%= link_to 'Destroy', quip_path(quip),
+					method: :delete,
+					data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 	<% end %>
 </table>

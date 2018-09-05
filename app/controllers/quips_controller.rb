@@ -34,7 +34,14 @@ class QuipsController < ApplicationController
 			render 'edit'
 		end
 	end 
-	
+
+	def destroy
+		@quip = Quip.find(params[:id])
+		@quip.destroy
+
+		redirect_to quips_path
+	end
+
 	private
 		def quip_params
 			params.require(:quip).permit(:text, :author, :branch, :offensive)
