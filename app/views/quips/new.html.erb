@@ -1,4 +1,28 @@
+<style>
+	.field_with_errors label {
+		color: red;
+	}
+	.field_with_errors input {
+		color: red;
+	}
+</style>
+
 <%= form_with scope: :quip, url: quips_path, local: true do |form| %>
+	
+	<% if @quip.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@quip.errors.count, "error") %> prohibited
+				this article from being saved:
+			</h2>
+			<ul>
+				<% @quip.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<p>
 		<%= form.label :text %><br>
 		<%= form.text_area :text %>

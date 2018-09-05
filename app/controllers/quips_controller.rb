@@ -8,13 +8,17 @@ class QuipsController < ApplicationController
 	end
 
 	def new
+		@quip = Quip.new
 	end
 
 	def create	
 		@quip = Quip.new(quip_params)
 
-		@quip.save
-		redirect_to @quip
+		if @quip.save
+			redirect_to @quip
+		else
+			render 'new'
+		end
 	end
 
 	private
