@@ -20,5 +20,33 @@
 	<%= @quip.offensive %>
 </p>
 
+<h2>Comments</h2>
+<% @quip.comments.each do |comment| %>
+	<p>
+		<strong>Commenter:</strong>
+		<%= comment.commenter %>
+	</p>
+	<p>
+		<strong>Comment:</strong>
+		<%= comment.body %>
+	</p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @quip, @quip.comments.build ], local: true) do |form| %>
+	<p>
+		<%= form.label :commenter %><br>
+		<%= form.text_field :commenter %>
+	</p>
+	<p>
+		<%= form.label :body %><br>
+		<%= form.text_field :body %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+
 <%= link_to 'Edit', edit_quip_path %> | 
 <%= link_to 'Home', quips_path %>
+
