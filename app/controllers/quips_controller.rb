@@ -11,6 +11,10 @@ class QuipsController < ApplicationController
 		@quip = Quip.new
 	end
 
+	def edit
+		@quip = Quip.find(params[:id])
+	end
+
 	def create	
 		@quip = Quip.new(quip_params)
 
@@ -21,6 +25,16 @@ class QuipsController < ApplicationController
 		end
 	end
 
+	def update
+		@quip = Quip.find(params[:id])
+
+		if @quip.update(quip_params)
+			redirect_to @quip
+		else
+			render 'edit'
+		end
+	end 
+	
 	private
 		def quip_params
 			params.require(:quip).permit(:text, :author, :branch, :offensive)
