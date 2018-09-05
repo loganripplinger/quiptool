@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+	http_basic_authenticate_with name: 'dhh', password: 'secret'
+	# only: :destroy
+
 	def create
 		@quip = Quip.find(params[:quip_id])
 		@comment = @quip.comments.create(comment_params)
@@ -6,7 +10,7 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
-		@quip = Quip.find(params[:quid_id])
+		@quip = Quip.find(params[:quip_id])
 		@comment = @quip.comments.find(params[:id])
 		@comment.destroy
 		redirect_to quip_path(@quip)
