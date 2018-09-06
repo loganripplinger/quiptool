@@ -1,7 +1,6 @@
-# quipwritingtool
-CRUD website for a team of joke writers
-
 # README
+
+Implementation of the Rails getting started guide.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
