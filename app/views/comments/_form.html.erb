@@ -1,15 +1,11 @@
 <%= form_with(model: [ @quip, @quip.comments.build ], local: true) do |form| %>
 	<p>
-		<%= form.label :commenter %><br>
-		<%= form.text_field :commenter %>
+		<%= form.label :author %><br>
+		<%= form.text_field :author %>
 	</p>
 	<p>
-		<%= form.label :quip %><br>
-		<%= form.text_field :quip %>
-	</p>
-	<p>
-		<%= form.label :comment %><br>
-		<%= form.text_field :comment %>
+		<%= form.label :text %><br>
+		<%= form.text_field :text %>
 	</p>
 	<p>
 		<%= form.submit %>

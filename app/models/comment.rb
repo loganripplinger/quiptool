@@ -1,9 +1,10 @@
 class Comment < ApplicationRecord
   belongs_to :quip
 
-	validates :quip, presence: true,
+	validates :author, presence: true
+
+	validates :text, presence: true,
 				 length: { minimum: 1}
 
-	validates :commenter, presence: true
 
 end

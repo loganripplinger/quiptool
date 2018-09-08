@@ -5,19 +5,32 @@
 
 <table>
 	<tr>
-		<th>Text</th>
-		<th>Author</th>
+		<th>Original Author</th>
+		<!-- <th>Text</th> -->
+		<th>Most Recent Author</th>
+		<th>Most Recent Text</th>
 		<th>Branch</th>
 		<th>Offensive</th>
+		<th>Id</th>
 		<th></th>
 	</tr>
 
 	<% @quips.each do |quip| %>
+	<% @latest_comment = @comments.where("quip_id = ?", quip.id).last %>
 		<tr>
-			<td><%= quip.text %></td>
 			<td><%= quip.author %></td>
+			
+			<% if @latest_comment %>
+				<td><%= @latest_comment.author %></td>
+				<td><%= @latest_comment.text %></td>
+			<% else %>
+				<td><%= quip.author %></td>
+				<td><%= quip.text %></td>
+			<% end %>
+			
 			<td><%= quip.branch %></td>
 			<td><%= quip.offensive %></td>
+			<td><%= quip.id %></td>
 			<td><%= link_to 'Show', quip_path(quip) %></td>
 			<td><%= link_to 'Edit', edit_quip_path(quip) %></td>
 			<td><%= link_to 'Destroy', quip_path(quip),

@@ -4,6 +4,7 @@ class QuipsController < ApplicationController
 
 	def index
 		@quips = Quip.all
+		@comments = Comment.joins(:quip)
 	end
 
 	def show
