@@ -1,0 +1,41 @@
+<%= form_with model: [ @quip, @quip.diffs.build ], local: true do |form| %>
+  
+  <%# <% if @diff.errors.any? %>
+    <%#<div id="error_explanation">
+      <h2>
+        <%= pluralize(@diff.errors.count, "error") %> <%#prohibited
+        this article from being saved:
+      <%#</h2>
+      <ul>
+        <% @diff.errors.full_messages.each do |msg| %>
+          <%#<li><%= msg %></li>
+        <%#<% end %>
+      <%#</ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+
+  <p>
+    <%= form.label :branch %><br>
+    <%= form.text_field :branch %>
+  </p>
+
+  <p>
+    <%= form.label :offensive %><br>
+    <%= form.check_box :offensive %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+  
+<% end %>

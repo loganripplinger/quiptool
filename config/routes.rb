@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :quips do
-  	resources :comments
+  	resources :diffs
   end
   
   root 'quips#index'

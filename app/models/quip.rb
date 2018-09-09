@@ -1,8 +1,5 @@
 class Quip < ApplicationRecord
-	has_many :comments, dependent: :destroy
-
-	validates :text, presence: true,
-					 length: { minimum: 1}
+	has_many :diffs, dependent: :destroy
 
 	validates :author, presence: true
 

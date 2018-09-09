@@ -4,7 +4,7 @@ class QuipsController < ApplicationController
 
 	def index
 		@quips = Quip.all
-		@comments = Comment.joins(:quip)
+		@diffs = Diff.joins(:quip)
 	end
 
 	def show
@@ -13,10 +13,6 @@ class QuipsController < ApplicationController
 
 	def new
 		@quip = Quip.new
-	end
-
-	def edit
-		@quip = Quip.find(params[:id])
 	end
 
 	def create	
