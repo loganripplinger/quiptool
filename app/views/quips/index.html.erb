@@ -2,42 +2,47 @@
 
 <%= link_to 'New Quip', new_quip_path %> 
 <br><br>
+	
+<% @quips.each do |quip| %>
+<% @latest_diff = @diffs.where("quip_id = ?", quip.id).last %>
+	
+	<div id="container">
+		<ul id="id_container">
+			<li id="id"><%= quip.id %></li>
+		</ul>
 
-<table>
-	<tr>
-		<th>Id</th>
-		<th>Original Author</th>
-		<!-- <th>Text</th> -->
-		<th>Most Recent Author</th>
-		<th>Most Recent Text</th>
-		<th>Branch</th>
-		<th>Offensive</th>
-		<th></th>
-	</tr>
+		<section class="card">
 
-	<% @quips.each do |quip| %>
-	<% @latest_diff = @diffs.where("quip_id = ?", quip.id).last %>
-		<tr>
-			<td><%= quip.id %></td>
-			<td><%= quip.author %></td>
-			
-			<% if @latest_diff %>
-				<td><%= @latest_diff.author %></td>
-				<td><%= @latest_diff.text %></td>
-				<td><%= @latest_diff.branch %></td>
-				<td><%= @latest_diff.offensive %></td>
-			<% else %>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			<% end %>
-			
-			
-			<td><%= link_to 'Show', quip_path(quip) %></td>
-			<td><%= link_to 'Destroy', quip_path(quip),
-					method: :delete,
-					data: { confirm: 'Are you sure?' } %></td>
-		</tr>
-	<% end %>
-</table>
+		<% if @latest_diff %>
+			<div id="card_head">
+				<h2 id="current_author"><%= @latest_diff.author %></h2>
+				<div id="original_author"><i>Created by: <%= quip.author %></i></div>
+			</div>
+			<p id="text"><%= @latest_diff.text %></p>
+			<div id="bottom_card">
+				<ul id="bottom_card_left">
+					<li id="branch"><%= @latest_diff.branch %></li>
+					<li id="offensive">Offensive: <%= @latest_diff.offensive %></li>
+				</ul>
+		
+		<% else %>
+			<div id="current_author"></div>
+			<div id="text"></div>
+			<div id="bottom_card">
+				<ul id="bottom_card_left">
+					<li id="branch"></li>
+					<li id="offensive"></li>
+				</ul>
+		<% end %>
+				
+				<ul id="bottom_card_right">
+					<li id="show"><%= link_to 'Show', quip_path(quip) %></li>
+					<li id="destroy"><%= link_to 'Destroy', quip_path(quip),
+									method: :delete,
+									data: { confirm: 'Are you sure?' } %></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+<% end %>

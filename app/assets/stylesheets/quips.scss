@@ -5,3 +5,102 @@
 .field_with_errors {
 	color: red;
 }
+
+
+html {
+	background-color: grey;
+}
+
+body {
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+	background-color: lightgrey;
+	height: 100vh;
+}
+
+li {
+	list-style: none;
+}
+
+#card_head {
+	div {
+		width: 50%;
+	}
+
+	h2 {
+		/*margin-top: 0px;*/
+		margin: 0px;
+		width: 50%;
+	}
+}
+
+
+#container {
+	display: flex;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+
+#id_container {
+	display: flex;	
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+}
+
+#id {
+	/*margin-right: 50px;*/
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+#bottom_card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+#bottom_card_left {
+	display: flex;
+	justify-content: space-between;
+	width: 25%;
+}
+
+#bottom_card_right {
+	display: flex;
+	width: 25%;
+	justify-content: space-between;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+
+
+
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    padding: 8px 16px;
+    background-color: white;
+}
+
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
