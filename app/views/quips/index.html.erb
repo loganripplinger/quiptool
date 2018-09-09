@@ -7,16 +7,14 @@
 <% @latest_diff = @diffs.where("quip_id = ?", quip.id).last %>
 	
 	<div id="container">
-		<ul id="id_container">
-			<li id="id"><%= quip.id %></li>
-		</ul>
+		
 
 		<section class="card">
 
 		<% if @latest_diff %>
 			<div id="card_head">
-				<h2 id="current_author"><%= @latest_diff.author %></h2>
-				<div id="original_author"><i>Created by: <%= quip.author %></i></div>
+				<h2 id="current_author"><%= quip.id %>. <%= quip.author %></h2>
+				<div id="original_author"><i>Recently modified by: <%= @latest_diff.author %></i></div>
 			</div>
 			<p id="text"><%= @latest_diff.text %></p>
 			<div id="bottom_card">

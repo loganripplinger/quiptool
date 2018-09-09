@@ -6,7 +6,6 @@
 	color: red;
 }
 
-
 html {
 	background-color: grey;
 }
@@ -35,23 +34,10 @@ li {
 	}
 }
 
-
 #container {
 	display: flex;
 	width: 100%;
-	margin-bottom: 50px;
-}
-
-
-#id_container {
-	display: flex;	
-	align-items: center;
-	justify-content: center;
-	width: 50px;
-}
-
-#id {
-	/*margin-right: 50px;*/
+	margin-bottom: 25px;
 }
 
 section {
