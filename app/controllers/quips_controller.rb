@@ -9,6 +9,7 @@ class QuipsController < ApplicationController
 
 	def show
 		@quip = Quip.find(params[:id])
+		@diff = Diff.new(:quip => @quip)
 	end
 
 	def new
@@ -25,15 +26,15 @@ class QuipsController < ApplicationController
 		end
 	end
 
-	def update
-		@quip = Quip.find(params[:id])
+	# def update
+	# 	@quip = Quip.find(params[:id])
 
-		if @quip.update(quip_params)
-			redirect_to @quip
-		else
-			render 'edit'
-		end
-	end 
+	# 	if @quip.update(quip_params)
+	# 		redirect_to @quip
+	# 	else
+	# 		render 'edit'
+	# 	end
+	# end 
 
 	def destroy
 		@quip = Quip.find(params[:id])
@@ -44,6 +45,6 @@ class QuipsController < ApplicationController
 
 	private
 		def quip_params
-			params.require(:quip).permit(:text, :author, :branch, :offensive)
+			params.require(:quip).permit(:author)
 		end
 end

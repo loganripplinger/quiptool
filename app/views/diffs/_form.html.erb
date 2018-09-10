@@ -1,16 +1,16 @@
 <%= form_with model: [ @quip, @quip.diffs.build ], local: true do |form| %>
   
-  <%# <% if @diff.errors.any? %>
-    <%#<div id="error_explanation">
+  <% if @diff.errors.any? %>
+    <div id="error_explanation">
       <h2>
-        <%= pluralize(@diff.errors.count, "error") %> <%#prohibited
+        <%= pluralize(@diff.errors.count, "error") %> prohibited
         this article from being saved:
-      <%#</h2>
+      </h2>
       <ul>
         <% @diff.errors.full_messages.each do |msg| %>
-          <%#<li><%= msg %></li>
-        <%#<% end %>
-      <%#</ul>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 

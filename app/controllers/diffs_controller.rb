@@ -5,8 +5,13 @@ class DiffsController < ApplicationController
 
 	def create
 		@quip = Quip.find(params[:quip_id])
-		@diff = @quip.diffs.create(diff_params)
-		redirect_to quip_path(@quip)
+		@diff = @quip.diffs.new(diff_params)
+		
+		if @diff.save
+			redirect_to quip_path(@quip)
+		else
+			render 'quips/show'
+		end
 	end
 
 	def destroy
