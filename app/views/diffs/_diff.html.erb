@@ -1,21 +1,29 @@
-<p>
-	<strong>Text:</strong>
-	<%= diff.text %>
-</p>
-
-<p>
-	<strong>Author:</strong>
-	<%= diff.author %>
-</p>
-
-<p>
-	<strong>Branch:</strong>
-	<%= diff.branch %>
-</p>
-
-<p>
-	<strong>Offensive:</strong>
-	<%= diff.offensive %>
-</p>
+<div id="container">
+	<section class="card">	
+		<div id="card_head">
+			<% if params[:action] == 'index' %>
+				<h2 id="current_author"><%= quip.id %>. <%= quip.author %></h2>
+			<% end %>
+			<div id="original_author"><i>Recently modified by: <%= diff.author %></i></div>
+		</div>
+		<p id="text"><%= diff.text %></p>
+		<div id="bottom_card">
+			<ul id="bottom_card_left">
+				<li id="branch"><%= diff.branch %></li>
+				<li id="offensive">Offensive: <%= diff.offensive %></li>
+			</ul>
+	
+	
+			<% if params[:action] == 'index' %>
+				<ul id="bottom_card_right">
+					<li id="show"><%= link_to 'Show', quip_path(@quip) %></li>
+					<li id="destroy"><%= link_to 'Destroy', quip_path(@quip),
+									method: :delete,
+									data: { confirm: 'Are you sure?' } %></li>
+				</ul>
+			<% end %>
+		</div>
+	</section>
+</div>
 
 <%# link_to 'Edit', edit_diff_path %>
