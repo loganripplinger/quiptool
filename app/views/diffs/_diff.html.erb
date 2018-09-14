@@ -4,7 +4,7 @@
 			<% if params[:action] == 'index' %>
 				<h2 id="current_author"><%= quip.id %>. <%= quip.author %></h2>
 			<% end %>
-			<div id="original_author"><i>Recently modified by: <%= diff.author %></i></div>
+			<div id="original_author"><em>Recently modified by: <%= diff.author %></em></div>
 		</div>
 		<p id="text"><%= diff.text %></p>
 		<div id="bottom_card">

@@ -1,8 +1,9 @@
+
 <h1>All quips</h1>
 
 <%= link_to 'New Quip', new_quip_path %> 
 <br><br>
-	
+
 <% @quips.each do |quip| %>
 <% @latest_diff = @diffs.where("quip_id = ?", quip.id).last %>
 	
@@ -12,7 +13,7 @@
 		<% if @latest_diff %>
 			<div id="card_head">
 				<h2 id="current_author"><%= quip.id %>. <%= quip.author %></h2>
-				<div id="original_author"><i>Recently modified by: <%= @latest_diff.author %></i></div>
+				<div id="original_author"><em>Recently modified by: <%= @latest_diff.author %></em></div>
 			</div>
 			<p id="text"><%= @latest_diff.text %></p>
 			<div id="bottom_card">
