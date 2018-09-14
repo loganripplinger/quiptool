@@ -2,9 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html, body {
 	background-color: lightblue;
-	/*font-family: ;*/
+	font-family: 'Roboto', sans-serif;
+	max-width: none;
+	margin: none;
+}
+
+#content {
+	max-width: 800px;
+	margin: auto;
 }
 
 section {
@@ -20,5 +29,35 @@ li {
 #intro {
 	text-align: center;
 	color: white;
+	/*position:absolute;*/
+	margin-bottom: 50px;
+	max-width: 400px;
 }
 
+#points-list {
+	position:absolute;
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
+	z-index: 5;
+}
+
+#background {
+	position: relative;
+	top: 100px;
+	background-color: white;
+	height: 100vh;
+	width: 100vw;
+	/*max-width: 100vw;*/
+	margin: 0;
+	padding: 0;
+	/*z-index: 1;*/
+}
+
+h1 {
+	font-size: 32pt;
+}
+
+h2 {
+	font-size: 12pt;
+}
