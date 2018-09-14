@@ -1,8 +1,10 @@
 
-<h1>All quips</h1>
+<section>
+	<h1>All quips</h1>
 
-<%= link_to 'New Quip', new_quip_path %> 
-<br><br>
+	<%= link_to 'New Quip', new_quip_path %> 
+	<br><br>
+</section>
 
 <% @quips.each do |quip| %>
 <% @latest_diff = @diffs.where("quip_id = ?", quip.id).last %>

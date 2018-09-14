@@ -1,14 +1,21 @@
-<h1>Show</h1>
+<section>
+	<h1>Show</h1>
 
-<p>
-	<strong>Original Creator:</strong>
-	<%= @quip.author %>
-</p>
+	<p>
+		<strong>Original Creator:</strong>
+		<%= @quip.author %>
+	</p>
+</section>
 
-<h2>Diffs</h2>
-<%= render @quip.diffs %>
+<section>
+	<h2>Diffs</h2>
+</section>
 
-<h2>Add a diff:</h2>
-<%= render 'diffs/form' %>
+	<%= render @quip.diffs %>
 
-<%= link_to 'Home', quips_path %>
+<section>
+	<h2>Add a diff:</h2>
+	<%= render 'diffs/form' %>
+
+	<%= link_to 'Home', quips_path %>
+</section>
