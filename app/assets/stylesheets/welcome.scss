@@ -17,6 +17,11 @@ html, body {
 	margin: auto;
 }
 
+i {
+	display: inline-block;
+	vertical-align: middle;
+}
+
 section {
 	max-width: 800px;
 	margin: auto;
@@ -24,7 +29,8 @@ section {
 
 li {
 	display: flex;
-	/*flex-direction: row;*/
+	flex-direction: row;
+	align-items: center;
 }
 
 #intro {
@@ -55,10 +61,14 @@ li {
 	/*z-index: 1;*/
 }
 
-h1 {
-	font-size: 32pt;
+
+#intro {
+	h1 { font-size: 3em; }
+	p { font-size: 1.5em; }
+	a {	font-size: 1.5em; }
 }
 
-h2 {
-	font-size: 12pt;
+#points-list {
+	h2 { font-size: 1.25em; }
+	p { font-size: 1em;	}
 }
